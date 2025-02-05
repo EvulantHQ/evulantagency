@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #ffffff;
-    color: #222;
+    color: #3a2a2a;
     text-align: center;
     animation: fadeIn 1s ease-in-out;
 }
@@ -13,7 +13,7 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(245, 240, 235, 0.9);
     backdrop-filter: blur(5px);
     transition: background 0.3s ease-in-out;
     z-index: 1000;
@@ -37,7 +37,7 @@ body {
 
 .nav-links a {
     text-decoration: none;
-    color: #222; /* Ensuring links stay black */
+    color: #3a2a2a; /* Ensuring links stay black */
     font-weight: bold;
     transition: color 0.3s ease-in-out;
 }
@@ -54,7 +54,7 @@ body {
 
 /* HERO SECTION */
 .hero {
-    background: #eef1f5;
+    background: #f4f0eb;
     height: 70vh;
     display: flex;
     flex-direction: column;
@@ -75,7 +75,7 @@ body {
 .cta-btn {
     display: inline-block;
     padding: 12px 24px;
-    background-color: #1a1a1a;
+    background-color: #3b2f2f;
     color: #fff;
     text-decoration: none;
     font-weight: bold;
@@ -118,7 +118,7 @@ body {
 .contact-btn {
     display: inline-block;
     padding: 12px 24px;
-    background-color: #222;
+    background-color: #3a2a2a;
     color: #fff;
     text-decoration: none;
     font-weight: bold;
@@ -136,7 +136,7 @@ body {
     font-size: 0.9em;
     opacity: 0.7;
     padding: 20px;
-    background-color: #eef1f5;
+    background-color: #f4f0eb;
     border-top: 1px solid #ddd;
 }
 
