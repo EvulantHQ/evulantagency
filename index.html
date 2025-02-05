@@ -3,7 +3,15 @@
 <head>
     <link rel="icon" type="image/png" href="favicon.png">
     <meta charset="UTF-8">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; img-src 'self' data:;">
+    <meta http-equiv="Content-Security-Policy" content="
+        default-src 'self';
+        style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+        font-src 'self' https://fonts.gstatic.com;
+        script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com;
+        connect-src 'self';
+        img-src 'self' data:;
+        object-src 'none';
+    ">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Evulant Agency - A Division of Evulant</title>
     <meta name="description" content="Evulant Agency provides premium management and growth solutions for digital creators.">
@@ -25,7 +33,6 @@
     <meta name="twitter:image" content="logo.png">
 
     <link rel="stylesheet" type="text/css" href="styles.css">
-    <script src="script.js" defer></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
     <!-- Structured Data for SEO -->
@@ -75,14 +82,14 @@
         </div>
     </header>
 
-    <section id="about" class="about">
+    <section id="about" class="about fade-in">
         <div class="content-wrapper">
             <h2>About Evulant Agency</h2>
             <p>We help creators maximize their potential by offering expert management, brand growth, and monetization strategies. Our agency is dedicated to scaling your influence and revenue while ensuring long-term success.</p>
         </div>
     </section>
     
-    <section id="services" class="services">
+    <section id="services" class="services fade-in">
         <div class="content-wrapper">
             <h2>Our Services</h2>
             <div class="services-grid">
@@ -106,7 +113,7 @@
         </div>
     </section>
     
-    <section id="contact" class="contact">
+    <section id="contact" class="contact fade-in">
         <div class="content-wrapper">
             <h2>Get in Touch</h2>
             <p>Interested in working with Evulant Agency? Reach out to us today.</p>
@@ -130,16 +137,20 @@
         });
 
         // Fade-in animation for sections on scroll
-        const sections = document.querySelectorAll(".content-wrapper");
+        const sections = document.querySelectorAll(".fade-in");
         const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add("fade-in");
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = "translateY(0)";
                 }
             });
         }, { threshold: 0.2 });
 
         sections.forEach(section => {
+            section.style.opacity = 0;
+            section.style.transform = "translateY(30px)";
+            section.style.transition = "opacity 0.8s ease-out, transform 0.8s ease-out";
             observer.observe(section);
         });
     </script>
